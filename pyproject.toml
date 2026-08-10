@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arterionet"
+version = "0.1.6"
+description = "Cuffless arterial blood pressure reconstruction from ECG and PPG biosignals using deep learning"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "McGovern Twumasi Owusu-Bekoe", email = "mcgovernowusubekoe@gmail.com"},
+    {name = "Emefa Abena Apedo", email = "emefaapedo@example.com"}
+]
+keywords = ["cuffless-bp", "abp-reconstruction", "ecg-ppg", "biomarkers", "arterial-stiffness"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Healthcare Industry",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Medical Science Apps",
+]
+
+dependencies = [
+    "numpy>=1.21.0",
+    "torch>=2.0.0",
+    "scipy>=1.8.0",
+    "matplotlib>=3.5.0",
+    "pandas>=1.3.0",
+    "scikit-learn>=1.0.0",
+]
+
+[project.optional-dependencies]
+mlx = ["mlx>=0.0.1"]
+visualization = ["streamlit>=1.20.0", "plotly>=5.0.0"]
+tflite = ["tensorflow>=2.11.0"]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/mcgovern-twumasi/arterionet"
+Documentation = "https://arterionet.readthedocs.io"
+Repository = "https://github.com/mcgovern-twumasi/arterionet.git"
+Issues = "https://github.com/mcgovern-twumasi/arterionet/issues"
+
+[tool.setuptools]
+packages = ["arterionet"]
+
+[tool.setuptools.package-data]
+arterionet = ["models/checkpoints/*", "data/examples/*"]
+
+[tool.black]
+line-length = 100
+target-version = ['py39', 'py310', 'py311']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true

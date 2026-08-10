@@ -4,21 +4,20 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "arterionet"
-version = "0.1.6"
+version = "0.1.0"
 description = "Cuffless arterial blood pressure reconstruction from ECG and PPG biosignals using deep learning"
 readme = "README.md"
 requires-python = ">=3.9"
-license = {text = "MIT"}
+license = {text = "MIT License"}
 authors = [
     {name = "McGovern Twumasi Owusu-Bekoe", email = "mcgovernowusubekoe@gmail.com"},
-    {name = "Emefa Abena Apedo", email = "emefaapedo@example.com"}
+    {name = "Emefa Abena Apedo", email = "emefaapedo@gmail.com"}
 ]
 keywords = ["cuffless-bp", "abp-reconstruction", "ecg-ppg", "biomarkers", "arterial-stiffness"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Healthcare Industry",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
